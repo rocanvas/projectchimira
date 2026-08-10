@@ -1,0 +1,60 @@
+# Client Identification
+
+## Target
+
+The target client for this preservation project is:
+
+- Product: Roblox WindowsPlayer
+- Client version: `0.472.0.419960`
+- Deployment identifier: `version-0137f7d4848f436a`
+- Deployment date: March 26, 2021
+- Main executable: `RobloxPlayerBeta.exe`
+
+The target was identified by comparing Roblox deployment history with the date of the historical Desktop Beta footage.
+
+The next WindowsPlayer deployment after this build was `0.473.0.420291`, deployed on April 7, 2021. This means `0.472.0.419960` was the current production WindowsPlayer during the April 4, 2021 SharkBlox video.
+
+## Historical Desktop Beta
+
+The historical Desktop Beta experience is shown here:
+
+https://www.youtube.com/watch?v=hn0i0Fufm_Q
+
+The client could enter the desktop app experience using the old app launch mode associated with:
+
+`LaunchExp:InApp`
+
+The preservation project is specifically interested in the signup and onboarding interface shown during this period, including the avatar selection flow.
+
+## Recovered Client Evidence
+
+Historical sandbox reports from 2021 contain artifacts from this exact deployment.
+
+A recovered `RobloxPlayerBeta.exe` from the deployment reports:
+
+- File version: `0.472.0.419960`
+- Product version: `0.472.0.419960`
+
+The historical launcher associated with the same deployment reports:
+
+- Product: Roblox Bootstrapper
+- File version: `1.6.0.419960`
+- Original filename: `roblox.exe`
+
+Known launcher SHA-256:
+
+`d3efd3fbdb3cf14e05bfa2c1996404d308d7635898cc9f45457d437060bdda7a`
+
+## Research Sources
+
+Roblox Deploy History:
+
+https://setup.roblox.com/DeployHistory.txt
+
+SharkBlox historical Desktop Beta video:
+
+https://www.youtube.com/watch?v=hn0i0Fufm_Q
+
+Hybrid Analysis report for the recovered 2021 Roblox launcher:
+
+https://hybrid-analysis.com/sample/d3efd3fbdb3cf14e05bfa2c1996404d308d7635898cc9f45457d437060bdda7a/6064f67c8458ca1047334859
