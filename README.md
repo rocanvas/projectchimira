@@ -1,4 +1,4 @@
-# Roblox 2021 Client Preservation
+# CHIMIRA: Roblox 2021 Client Preservation
 
 This repository documents a personal software preservation project focused on the Roblox Windows client from early 2021.
 
