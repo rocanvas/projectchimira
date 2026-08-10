@@ -1,0 +1,94 @@
+# Artifact Recovery
+
+## Overview
+
+The goal of this research is to reconstruct the original file set used by Roblox WindowsPlayer `0.472.0.419960`.
+
+The Roblox bootstrapper downloaded a package manifest and then fetched individual ZIP packages used to build the installed client directory.
+
+Historical ANY.RUN and Hybrid Analysis reports preserved several of those downloaded files and their hashes.
+
+## Exact Package Manifest
+
+The recovered package manifest for `version-0137f7d4848f436a` identifies the package set required by the client.
+
+Important packages include:
+
+- `RobloxApp.zip`
+- `content-avatar.zip`
+- `content-configs.zip`
+- `content-fonts.zip`
+- `content-models.zip`
+- `content-sky.zip`
+- `content-sounds.zip`
+- `content-textures2.zip`
+- `content-textures3.zip`
+- `content-terrain.zip`
+- `content-platform-fonts.zip`
+- `extracontent-luapackages.zip`
+- `extracontent-translations.zip`
+- `extracontent-models.zip`
+- `extracontent-textures.zip`
+- `extracontent-places.zip`
+- `shaders.zip`
+- `ssl.zip`
+
+## LuaPackages
+
+The most important package for the Desktop Beta interface research is:
+
+`extracontent-luapackages.zip`
+
+Exact MD5:
+
+`67ee59d37a7aeda3d73a7ee4b0de648e`
+
+Expected compressed size:
+
+`3036167` bytes
+
+Hybrid Analysis recorded a file named:
+
+`67ee59d37a7aeda3d73a7ee4b0de648e.part`
+
+Its recorded size is exactly `3036167` bytes and its MD5 is exactly `67ee59d37a7aeda3d73a7ee4b0de648e`, showing that the full package was present in the sandbox artifact set even though the filename retained the `.part` suffix.
+
+Recorded SHA-256:
+
+`9de1405e9141a75b5d3d4a104d0a4c3e4dd63d173b6b40fe10a2715be9b273db`
+
+## Other Confirmed Complete Artifacts
+
+Several other package artifacts recorded by Hybrid Analysis match the expected package hashes exactly, including:
+
+- `2e3c935af21215fa736f475a71273b5f.part`
+- `7a874a687280fde6d0845353a4394179.part`
+- `8103c0a5cb00e5e82ed7ca01886c3377.part`
+- `97a686f34ce9e4df512314c0a50fa291.part`
+- `9a3d716b662d8f0c17ce0a517d3866eb.part`
+- `b1f44b93a038c9eedb4b5c882bf07633.part`
+- `b912df2a67d2ebaf14b8500b17850ffc.part`
+- `d034b3f39584a8a95a2baa463afdb75e.part`
+- `f45b770af4516329ac7a06407b8fafdd.part`
+
+Some other `.part` files were only partially captured and do not match their expected package MD5s.
+
+## Sandbox Sources
+
+ANY.RUN preserved the April 2021 installation traffic and downloaded artifacts associated with the target deployment.
+
+Historical ANY.RUN report:
+
+https://any.run/report/392e23f66658ef520fc8556fa2a20ce27718cc5ce1959caf7d58eb4d09a911d6/bf37bba0-df71-441d-b41e-8ec83a95d291
+
+Hybrid Analysis preserved additional dropped-file metadata for the exact Roblox launcher.
+
+Hybrid Analysis report:
+
+https://hybrid-analysis.com/sample/d3efd3fbdb3cf14e05bfa2c1996404d308d7635898cc9f45457d437060bdda7a/6064f67c8458ca1047334859
+
+## Preservation Goal
+
+The project aims to recover and verify the original package set, rebuild the historical installation directory, inspect the Desktop Beta application resources, and document the original signup flow for offline historical preservation.
+
+No public Roblox service, authentication system, or multiplayer revival is being created.
